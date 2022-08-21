@@ -1,0 +1,12 @@
+<!-- 중량 목록 -->
+<hi>Product Profile</hi>
+
+{% if weight_list %}
+    <ul>
+    {% for weight in weight_list %}
+        <li><a href="{{ url_for('product.detail', product_id = weight.id) }}">{{ weight.weight }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>데이터가 없습니다.</p>
+{% endif %}
